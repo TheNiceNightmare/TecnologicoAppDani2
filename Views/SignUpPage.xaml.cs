@@ -2,14 +2,14 @@ using TecnologicoAppDani2.ViewModels;
 
 namespace TecnologicoAppDani2.Views;
 
-public partial class LoginPage : ContentPage
+public partial class SignUpPage : ContentPage
 {
-    public LoginPage(LoginPageViewModel loginPageViewModel)
+	public SignUpPage(SignUpPageViewModel SignUpPageViewModel)
     {
         try
         {
             InitializeComponent();
-            BindingContext = loginPageViewModel;
+            BindingContext = SignUpPageViewModel;
         }
         catch (XamlParseException ex)
         {
@@ -19,5 +19,6 @@ public partial class LoginPage : ContentPage
         {
             Console.WriteLine(ex.Message);
         }
+
     }
 }

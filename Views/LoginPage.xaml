@@ -4,20 +4,17 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:TecnologicoAppDani2.ViewModels"
     Title="Tecnologico App">
-    
-    <ContentPage.BindingContext>
-    <local:LoginPageViewModel />
-</ContentPage.BindingContext>
-<ScrollView>
-    <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
-        <Image
+
+    <ScrollView>
+        <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+            <Image
                 Margin="0,30,0,0"
                 HeightRequest="100"
                 HorizontalOptions="Center"
                 Source="login.png"
                 WidthRequest="100" />
-        <StackLayout Padding="40" Spacing="30">
-            <Entry
+            <StackLayout Padding="40" Spacing="30">
+                <Entry
                     x:Name="EmailEntry"
                     HorizontalOptions="Center"
                     Keyboard="Email"
@@ -26,7 +23,7 @@
                     Text="{Binding Usuario.Email}"
                     TextColor="Black"
                     WidthRequest="333" />
-            <Entry
+                <Entry
                     x:Name="PasswordEntry"
                     HorizontalOptions="Center"
                     IsPassword="True"
@@ -35,17 +32,22 @@
                     Text="{Binding Usuario.Password}"
                     TextColor="Black"
                     WidthRequest="333" />
-            <Button
+                <Button
                     x:Name="LoginBtn"
                     Command="{Binding LoginCommand}"
                     Text="Iniciar" />
-        </StackLayout>
-        <StackLayout>
-            <Label
-                    FontSize="16"
+            </StackLayout>
+            <StackLayout>
+                <Label
                     HorizontalOptions="Center"
-                    Text="Register" />
+                    Text="Registro"
+                    VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding RegisterCommand}"/>
+                    </Label.GestureRecognizers>
+
+                </Label>
+            </StackLayout>
         </StackLayout>
-    </StackLayout>
-</ScrollView>
+    </ScrollView>
 </ContentPage>

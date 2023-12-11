@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TecnologicoAppDani2.Views.SignUpPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TecnologicoAppDani2.ViewModels"
+    Title="Registro">
+    <ScrollView>
+    <StackLayout VerticalOptions="Start">
+        <Label
+                Padding="35"
+                FontSize="Large"
+                HorizontalOptions="Center"
+                Text="Registro"
+                TextColor="Black" />
+        <!--  Formulario  -->
+        <StackLayout Padding="0,10,0,0">
+            <!--  E-mail  -->
+            <StackLayout Padding="20">
+                <Label Text="Email" TextColor="Black" />
+                <Entry
+                        x:Name="EmailEntry"
+                        HorizontalOptions="StartAndExpand"
+                        Keyboard="Email"
+                        Text="{Binding Usuario.Email}"
+                        TextColor="Black"
+                        WidthRequest="333" />
+            </StackLayout>
+            <!--  Contraseña  -->
+            <StackLayout Padding="20">
+                <Label Text="Contraseña" TextColor="Black" />
+                <Entry
+                        x:Name="PasswordEntry"
+                        HorizontalOptions="StartAndExpand"
+                        IsPassword="True"
+                        Text="{Binding Usuario.Password}"
+                        TextColor="Black"
+                        WidthRequest="333" />
+            </StackLayout>
+            <StackLayout Padding="20">
+                <Label Text="Repetir Contraseña" TextColor="Black" />
+                <Entry
+                        x:Name="PasswordEntry2"
+                        HorizontalOptions="StartAndExpand"
+                        IsPassword="True"
+                        Text="{Binding Password2}"
+                        TextColor="Black"
+                        WidthRequest="333" />
+            </StackLayout>
+        </StackLayout>
+        <!--  Botón  -->
+        <StackLayout Padding="50,10">
+            <Button
+                    x:Name="SaveBtn"
+                    Command="{Binding SaveCommand}"
+                    Text="Guardar" />
+        </StackLayout>
+    </StackLayout>
+   </ScrollView>
+ </ContentPage>
